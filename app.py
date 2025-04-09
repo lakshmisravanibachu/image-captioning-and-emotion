@@ -6,10 +6,10 @@ import torch
 # Load models only once
 @st.cache_resource
 def load_models():
-    blip_processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-    blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
-    t5_tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large")
-    t5_model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-large")
+    blip_processor = BlipProcessor.from_pretrained("blip_local")
+blip_model = BlipForConditionalGeneration.from_pretrained("blip_local")
+t5_tokenizer = T5Tokenizer.from_pretrained("t5_local")
+t5_model = T5ForConditionalGeneration.from_pretrained("t5_local")
     return blip_processor, blip_model, t5_tokenizer, t5_model
 
 blip_processor, blip_model, t5_tokenizer, t5_model = load_models()
