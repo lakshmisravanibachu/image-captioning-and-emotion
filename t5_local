@@ -1,0 +1,5 @@
+from transformers import T5Tokenizer, T5ForConditionalGeneration
+t5_tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large")
+t5_model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-large")
+t5_tokenizer.save_pretrained("t5_local")
+t5_model.save_pretrained("t5_local")
